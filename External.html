@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your India Post Consignment</title>
+  <link rel="stylesheet" href="External.css">
+  <style>
+    .tracking-message {
+      font-weight: bold;
+      color: green;
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+    .highlight-row {
+      background-color: #ffeeba;
+    }
+    .key-pressed {
+      color: blue;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html"><img src="logo.jpg" alt="India Post Logo"></a>
+    <nav class="top-nav">
+      <ul>
+        <li>About Us</li>
+        <li>Services</li>
+        <li>Tools</li>
+        <li>Help & Support</li>
+        <li>Sign in / Register</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="track-page">
+    <nav class="breadcrumb">
+      <a href="index.html">Home ></a>
+      <span class="highlight">Track Consignment</span>
+    </nav>
+
+    <h1 class="section-title">Track Your Consignment</h1>
+
+    <input type="text" id="keyCapture" placeholder="Type here to trigger key event..." style="width: 300px; margin-bottom: 10px;" />
+    <div id="dynamicMessage"></div>
+
+    <section class="consignment-details">
+      <div class="order-details">
+        <h3>Order Details</h3>
+        <p>Booked at: <strong>Vashi BPC</strong></p>
+        <p>Booked on: <strong>25/03/2025 - 00:14:11</strong></p>
+        <p>Destination Pincode: <strong>854317</strong></p>
+        <p>Tariff: <strong>41.30</strong></p>
+      </div>
+      <div class="consignment-meta">
+        <p>Consignment number: <strong>JJ526731831IN</strong></p>
+        <p>Delivered to: <strong>Barsoighat SO</strong></p>
+        <p>Delivered on: <strong>03/04/2025 - 18:19:13</strong></p>
+        <p>Article Type: <strong>Inland Speed Post</strong></p>
+        <p>Item Status: <strong>Item Delivered</strong></p>
+      </div>
+    </section>
+
+    <section class="tracking-table">
+      <h2>Tracking History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Office</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>03/04/2025</td><td>18:19:13</td><td>FATEHPUR BO</td><td>Item Delivered</td></tr>
+          <tr><td>03/04/2025</td><td>15:48:37</td><td>BARSOIGHAT SO</td><td>Item Dispatched</td></tr>
+          <tr><td>03/04/2025</td><td>14:33:21</td><td>BARSOIGHAT SO</td><td>Item Bagged</td></tr>
+          <tr><td>03/04/2025</td><td>13:20:02</td><td>BARSOIGHAT SO</td><td>Item Received</td></tr>
+          <tr><td>28/03/2025</td><td>04:04:48</td><td>BARAUNI NSH</td><td>Item Delivered</td></tr>
+          <tr><td>28/03/2025</td><td>18:19:13</td><td>BARAUNI NSH</td><td>Item Dispatched</td></tr>
+          <tr><td>28/03/2025</td><td>18:19:13</td><td>BARAUNI NSH</td><td>Item Received</td></tr>
+          <tr><td>25/03/2025</td><td>18:19:13</td><td>VASHI BPC</td><td>Item Dispatched</td></tr>
+          <tr><td>25/03/2025</td><td>18:19:13</td><td>VASHI BPC</td><td>Item Bagged</td></tr>
+          <tr><td>25/03/2025</td><td>18:19:13</td><td>VASHI BPC</td><td>Item Booked</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Home</li>
+          <li>About us</li>
+          <li>Forms</li>
+          <li>Recruitment</li>
+          <li>Holidays</li>
+          <li>Feedback</li>
+        </ul>
+      </div>
+      <div>
+        <h4>External Links</h4>
+        <ul>
+          <li>National Portal of India</li>
+          <li>National Voter's Service Portal</li>
+          <li>India Code</li>
+          <li>Application Security Audit Report</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <p>Enquiry Helpline: 18002666868</p>
+        <p>Timing: 9 AM - 6 PM</p>
+        <p>IVRS: 24/7</p>
+      </div>
+    </div>
+    <p class="footer-note">This website belongs to Department of India Post, Ministry of Communications, Government of India.</p>
+  </footer>
+
+  <script>
+    function showTrackingMessage() {
+      const message = document.createElement('p');
+      message.textContent = "✅ Tracking information successfully loaded!";
+      message.className = 'tracking-message';
+      document.getElementById('dynamicMessage').appendChild(message);
+    }
+    setTimeout(showTrackingMessage, 1000);
+
+    document.getElementById('keyCapture').addEventListener('keydown', (e) => {
+      const dynMsg = document.getElementById('dynamicMessage');
+      dynMsg.textContent = `You pressed: "${e.key}"`;
+      dynMsg.className = 'key-pressed';
+    });
+
+    const rows = document.querySelectorAll('.tracking-table tbody tr');
+    rows.forEach(row => {
+      row.addEventListener('mouseover', () => {
+        row.classList.add('highlight-row');
+      });
+      row.addEventListener('mouseout', () => {
+        row.classList.remove('highlight-row');
+      });
+      row.addEventListener('click', (e) => {
+        const parentRow = e.currentTarget;
+        const date = parentRow.children[0].textContent;
+        const office = parentRow.children[2].textContent;
+        alert(`You clicked the update from ${office} on ${date}`);
+      });
+    });
+
+    const orderDetails = document.getElementById('orderDetails');
+    const firstP = orderDetails.getElementsByTagName('p')[0];
+    console.log('Booked at detail:', firstP.textContent);
+  </script>
+</body>
+</html>

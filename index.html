@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>India Post - Track & Trace</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-content">
+      <img src="logo.jpg" alt="India Post Logo" class="logo">
+      <nav class="nav-links">
+        <ul>
+          <li><b>About Us</b></li>
+          <li><b>Services</b></li>
+          <li><b>Tools</b></li>
+          <li><b>Help & Support</b></li>
+          <li><b>Sign in / Register</b></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Track n Trace Section -->
+  <section class="track-section">
+    <div class="container">
+      <h1>Track n Trace</h1>
+      <div class="track-box">
+        <div class="track-tabs">
+          <div class="tab active " data-target="single-track">Track your package</div>
+          <div class="tab" data-target="multiple-track">Track multiple</div>
+        </div>
+       
+        <div id="single-track" class="track-form">
+          <div class="input-group">
+            <input type="text" placeholder="Enter consignment number">
+          </div>
+          <div class="captcha-group">
+            <img src="captcha.jpg" alt="Captcha">
+            <input type="text" placeholder="Enter captcha">
+          </div>
+          <a href="External.html" class="track-btn">Track Now</a>
+        </div>
+
+        <div id="multiple-track" class="track-form" style="display: none;">
+          <div class="input-group">
+            <input type="text" placeholder="Enter multiple consignment numbers (comma separated)">
+          </div>
+          <div class="captcha-group">
+            <img src="captcha.jpg" alt="Captcha">
+            <input type="text" placeholder="Enter captcha">
+          </div>
+          <a href="External.html" class="track-btn">Track all</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- Quick Services Section -->
+<section class="quick-services">
+  <div class="container services-grid">
+    <div class="service-item">
+      <img src="calculate.jpg" alt="Calculate Postage">
+      Calculate Postage
+    </div>
+    <div class="service-item">
+      <img src="Find pincode.jpg" alt="Find Pincode">
+      Find Pincode
+    </div>
+    <div class="service-item">
+      <img src="click n book.jpg" alt="Click n Book">
+      Click n Book
+    </div>
+    <div class="service-item">
+      <img src="buy stamps.jpg" alt="Buy Stamps">
+      Buy Stamps
+    </div>
+    <div class="service-item">
+      <img src="locate.jpg" alt="Locate Post Office">
+      Locate Post Office
+    </div>
+  </div>
+</section>
+
+
+  <!-- Portals Section -->
+  <section class="portals-section">
+    <div class="container portals-grid">
+      <div class="portal-card">
+        <img src="dak karmayogi.jpg" alt="Dak Karmayogi Portal">
+        <p>Dak Karmayogi Portal</p>
+      </div>
+      <div class="portal-card">
+        <img src="images/dak niryat.png" alt="Dak Ghar Niryat Portal">
+        <p>Dak Ghar Niryat Portal</p>
+      </div>
+      <div class="portal-card">
+        <img src="payment bank.jpg" alt="India Post Payments Bank">
+        <p>India Post Payments Bank</p>
+      </div>
+      <div class="portal-card">
+        <img src="postal life.jpg" alt="Postal Life Insurance">
+        <p>Postal Life Insurance</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIGIPIN Section -->
+  <section class="digipin-section">
+    <div class="container digipin-grid">
+      <div class="digipin-text">
+        <h2>Discover <span class="highlight">DIGIPIN</span></h2>
+        <p>DIGIPIN is a new geo-coded addressing system introduced by the Department of Posts...</p>
+        <a href="#">Join us in shaping the future</a>
+      </div>
+      <div class="digipin-img">
+        <img src="Digipin.jpg" alt="Person Working" width="670px">
+      </div>
+    </div>
+  </section>
+
+  <!-- What's New Section -->
+  <section class="whatsnew-section">
+    <div class="container">
+      <h2>What's New</h2>
+      <div class="news-tabs">
+        <span class="tab news-tab active" data-target="news-updates">News & Updates</span>
+        <span class="tab news-tab" data-target="news-tenders">Tenders</span>
+        <span class="tab news-tab" data-target="news-notifications">Notifications</span>
+        <span class="tab news-tab" data-target="news-recruitment">Recruitment</span>
+      </div>
+
+      <div id="news-updates" class="news-section">
+        <div class="news-item">Jul 19, 2024 - Beta Version of the DIGIPIN Grid released</div>
+        <div class="news-item">Jun 26, 2024 - Resumption of booking to Israel and Iran</div>
+        <div class="news-item">Jun 11, 2024 - Letter Writing Competition 2023-24 Results</div>
+      </div>
+
+    </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Forms</li>
+          <li>Feedback</li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>External Links</h4>
+        <ul>
+          <li>National Portal of India</li>
+          <li>National Voter's Service Portal</li>
+          <li>India Code</li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>This website belongs to Department of Posts, Ministry of Communications, GoI. Created and Managed by Tata Consultancy Services Ltd.
+          Content owned and updated by Department of Posts, Ministry of Communications, Government of India. Last Updated: 28 Apr 2025</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
